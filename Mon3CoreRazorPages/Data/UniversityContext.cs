@@ -17,5 +17,7 @@ namespace Mon3CoreRazorPages.Models
         public DbSet<Student> Student { get; set; }
 
         public DbSet<Mon3CoreRazorPages.Models.Course> Course { get; set; }
+
+        public DbSet<Mon3CoreRazorPages.Models.Enrollment> Enrollment { get; set; }
     }
 }

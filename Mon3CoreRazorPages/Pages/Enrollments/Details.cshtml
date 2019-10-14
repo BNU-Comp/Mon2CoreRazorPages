@@ -1,0 +1,31 @@
+﻿@page
+@model Mon3CoreRazorPages.Pages.Enrollments.DetailsModel
+
+<div>
+    <h4>Enrollment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Enrollment.Grade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Enrollment.Grade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Enrollment.Course)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Enrollment.Course.CourseID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Enrollment.Student)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Enrollment.Student.StudentID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Enrollment.EnrollmentID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
