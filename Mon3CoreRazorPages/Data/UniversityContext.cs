@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Mon3CoreRazorPages.Models;
 
 namespace Mon3CoreRazorPages.Models
 {
@@ -13,6 +14,8 @@ namespace Mon3CoreRazorPages.Models
         {
         }
 
-        public DbSet<Mon3CoreRazorPages.Models.Student> Student { get; set; }
+        public DbSet<Student> Student { get; set; }
+
+        public DbSet<Mon3CoreRazorPages.Models.Course> Course { get; set; }
     }
 }
