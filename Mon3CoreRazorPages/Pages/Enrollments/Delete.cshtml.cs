@@ -28,7 +28,7 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
                 return NotFound();
             }
 
-            Enrollment = await _context.Enrollment
+            Enrollment = await _context.Enrollments
                 .Include(e => e.Course)
                 .Include(e => e.Student).FirstOrDefaultAsync(m => m.EnrollmentID == id);
 
@@ -46,11 +46,11 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
                 return NotFound();
             }
 
-            Enrollment = await _context.Enrollment.FindAsync(id);
+            Enrollment = await _context.Enrollments.FindAsync(id);
 
             if (Enrollment != null)
             {
-                _context.Enrollment.Remove(Enrollment);
+                _context.Enrollments.Remove(Enrollment);
                 await _context.SaveChangesAsync();
             }
 

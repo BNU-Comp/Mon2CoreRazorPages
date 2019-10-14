@@ -28,7 +28,7 @@ namespace Mon3CoreRazorPages.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.StudentID == id);
+            Student = await _context.Students.FirstOrDefaultAsync(m => m.StudentID == id);
 
             if (Student == null)
             {
@@ -44,11 +44,11 @@ namespace Mon3CoreRazorPages.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FindAsync(id);
+            Student = await _context.Students.FindAsync(id);
 
             if (Student != null)
             {
-                _context.Student.Remove(Student);
+                _context.Students.Remove(Student);
                 await _context.SaveChangesAsync();
             }
 

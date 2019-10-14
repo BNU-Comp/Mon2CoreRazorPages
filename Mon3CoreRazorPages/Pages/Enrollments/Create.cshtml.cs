@@ -20,8 +20,8 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
 
         public IActionResult OnGet()
         {
-        ViewData["CourseID"] = new SelectList(_context.Course, "CourseID", "CourseID");
-        ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID");
+        ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID");
+        ViewData["StudentID"] = new SelectList(_context.Students, "StudentID", "StudentID");
             return Page();
         }
 
@@ -35,7 +35,7 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
                 return Page();
             }
 
-            _context.Enrollment.Add(Enrollment);
+            _context.Enrollments.Add(Enrollment);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

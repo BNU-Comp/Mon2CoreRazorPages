@@ -22,7 +22,7 @@ namespace Mon3CoreRazorPages.Pages.Courses
 
         public async Task OnGetAsync()
         {
-            Course = await _context.Course.ToListAsync();
+            Course = await _context.Courses.ToListAsync();
         }
     }
 }

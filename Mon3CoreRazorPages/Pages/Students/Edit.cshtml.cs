@@ -29,7 +29,7 @@ namespace Mon3CoreRazorPages.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.StudentID == id);
+            Student = await _context.Students.FirstOrDefaultAsync(m => m.StudentID == id);
 
             if (Student == null)
             {
@@ -68,7 +68,7 @@ namespace Mon3CoreRazorPages.Pages.Students
 
         private bool StudentExists(int id)
         {
-            return _context.Student.Any(e => e.StudentID == id);
+            return _context.Students.Any(e => e.StudentID == id);
         }
     }
 }

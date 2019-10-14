@@ -27,7 +27,7 @@ namespace Mon3CoreRazorPages.Pages.Courses
                 return NotFound();
             }
 
-            Course = await _context.Course.FirstOrDefaultAsync(m => m.CourseID == id);
+            Course = await _context.Courses.FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Course == null)
             {

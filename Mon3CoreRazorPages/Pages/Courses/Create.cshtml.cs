@@ -33,7 +33,7 @@ namespace Mon3CoreRazorPages.Pages.Courses
                 return Page();
             }
 
-            _context.Course.Add(Course);
+            _context.Courses.Add(Course);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

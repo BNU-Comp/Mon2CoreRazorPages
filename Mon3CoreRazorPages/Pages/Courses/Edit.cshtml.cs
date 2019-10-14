@@ -29,7 +29,7 @@ namespace Mon3CoreRazorPages.Pages.Courses
                 return NotFound();
             }
 
-            Course = await _context.Course.FirstOrDefaultAsync(m => m.CourseID == id);
+            Course = await _context.Courses.FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Course == null)
             {
@@ -68,7 +68,7 @@ namespace Mon3CoreRazorPages.Pages.Courses
 
         private bool CourseExists(int id)
         {
-            return _context.Course.Any(e => e.CourseID == id);
+            return _context.Courses.Any(e => e.CourseID == id);
         }
     }
 }

@@ -18,11 +18,11 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
             _context = context;
         }
 
-        public IList<Enrollment> Enrollment { get;set; }
+        public IList<Enrollment> Enrollments { get;set; }
 
         public async Task OnGetAsync()
         {
-            Enrollment = await _context.Enrollment
+            Enrollments = await _context.Enrollments
                 .Include(e => e.Course)
                 .Include(e => e.Student).ToListAsync();
         }

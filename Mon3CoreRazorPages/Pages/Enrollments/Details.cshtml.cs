@@ -27,7 +27,7 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
                 return NotFound();
             }
 
-            Enrollment = await _context.Enrollment
+            Enrollment = await _context.Enrollments
                 .Include(e => e.Course)
                 .Include(e => e.Student).FirstOrDefaultAsync(m => m.EnrollmentID == id);
 

@@ -27,7 +27,7 @@ namespace Mon3CoreRazorPages.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.StudentID == id);
+            Student = await _context.Students.FirstOrDefaultAsync(m => m.StudentID == id);
 
             if (Student == null)
             {

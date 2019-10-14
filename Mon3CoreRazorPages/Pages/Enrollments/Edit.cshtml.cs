@@ -29,7 +29,7 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
                 return NotFound();
             }
 
-            Enrollment = await _context.Enrollment
+            Enrollment = await _context.Enrollments
                 .Include(e => e.Course)
                 .Include(e => e.Student).FirstOrDefaultAsync(m => m.EnrollmentID == id);
 
@@ -37,8 +37,8 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
             {
                 return NotFound();
             }
-           ViewData["CourseID"] = new SelectList(_context.Course, "CourseID", "CourseID");
-           ViewData["StudentID"] = new SelectList(_context.Student, "StudentID", "StudentID");
+           ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID");
+           ViewData["StudentID"] = new SelectList(_context.Students, "StudentID", "StudentID");
             return Page();
         }
 
@@ -72,7 +72,7 @@ namespace Mon3CoreRazorPages.Pages.Enrollments
 
         private bool EnrollmentExists(int id)
         {
-            return _context.Enrollment.Any(e => e.EnrollmentID == id);
+            return _context.Enrollments.Any(e => e.EnrollmentID == id);
         }
     }
 }
